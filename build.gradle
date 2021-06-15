@@ -1,9 +1,12 @@
 plugins {
     id "java"
     id "idea"
-    id "org.jetbrains.intellij" version "0.3.11"
+    id "org.jetbrains.intellij" version "1.0"
     id "pl.allegro.tech.build.axion-release" version "1.9.3"
 }
+
+sourceCompatibility = 11
+targetCompatibility = 11
 
 group "net.ashald"
 
@@ -29,17 +32,17 @@ allprojects {
 }
 
 intellij {
-    version jetbrains.version
-    pluginName "EnvFile"
-    sameSinceUntilBuild false
-    updateSinceUntilBuild false
+    version = jetbrains.version
+    pluginName = "EnvFile"
+    sameSinceUntilBuild = false
+    updateSinceUntilBuild = false
 }
 
 dependencies {
-    compile project(":envfile-products-idea")
-    compile project(":envfile-products-pycharm")
-    compile project(":envfile-products-rubymine")
-    compile project(":envfile-products-goland")
+    implementation project(":envfile-products-idea")
+    implementation project(":envfile-products-pycharm")
+    implementation project(":envfile-products-rubymine")
+    implementation project(":envfile-products-goland")
 }
 
 wrapper {
